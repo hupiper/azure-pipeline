@@ -14,3 +14,8 @@ steps:
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'rosa'
+- task: oc-cmd@2
+  inputs:
+    connectionType: 'OpenShift Connection Service'
+    openshiftService: 'rosa'
+    cmd: 'oc new-project mydemo'
