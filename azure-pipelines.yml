@@ -6,11 +6,7 @@
 trigger:
 - main
 
-jobs:
-- job: myjob
-  displayName: MyJob
   pool:
-
     vmImage: windows-latest
 
   steps:
