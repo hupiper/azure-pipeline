@@ -6,11 +6,21 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+jobs:
+- job: myjob
+  displayName: MyJob
+  pool:
 
-steps:
-- task: oc-setup@2
+    vmImage: windows-latest
+
+  steps:
+  - task: oc-setup@2
+    inputs:
+      connectionType: 'OpenShift Connection Service'
+      openshiftService: 'rosa'
+  - task: oc-cmd@2
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'rosa'
+    cmd: 'oc new-project my-project'
+  
